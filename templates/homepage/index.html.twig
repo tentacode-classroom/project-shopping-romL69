@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+{{ include('layout/menu.html.twig') }}
+
+        <h2>Liste des good boii</h2>
+        <ul>
+            {% for dog in dogs %}
+                <li>
+                    {{ loop.index }} - <a href=" {{ path('product', {'productId': dog.id}) }} "> {{ dog.id +1}} {{ dog.name|upper }} {{ dog.color }} {{ dog.price }} € Goodboy :{{ dog.goodboy }} /5</a>
+                </li>
+            {% endfor %}
+</ul>
+<img src="http://image.noelshack.com/fichiers/2018/39/3/1537958498-69y0wezi91501.jpg" alt="">
+    </body>
+</html>
