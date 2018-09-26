@@ -44,12 +44,44 @@ Class DogRepository
         $dog5->setColor('noir');
         $dog5->setPrice(350);
 
+        $dog6 = new Dog();
+        $dog6->setId(5);
+        $dog6->setName('Joachim ');
+        $dog6->setGoodBoy(5);
+        $dog6->setColor('orange');
+        $dog6->setPrice(999);
+
+        $dog7 = new Dog();
+        $dog7->setId(6);
+        $dog7->setName('Wilhelm ');
+        $dog7->setGoodBoy(4);
+        $dog7->setColor('jaune');
+        $dog7->setPrice(655);
+
+        $dog8 = new Dog();
+        $dog8->setId(7);
+        $dog8->setName('Karl ');
+        $dog8->setGoodBoy(5);
+        $dog8->setColor('blue');
+        $dog8->setPrice(666);
+
+        $dog9 = new Dog();
+        $dog9->setId(8);
+        $dog9->setName('Erich ');
+        $dog9->setGoodBoy(5);
+        $dog9->setColor('blond chatain pale');
+        $dog9->setPrice(700);
+
         $this->dogs = [
             $dog1,
             $dog2,
             $dog3,
             $dog4,
             $dog5,
+            $dog6,
+            $dog7,
+            $dog8,
+            $dog9,
         ];
     }
     public function findAll(): array
