@@ -47,7 +47,7 @@ Class DogRepository
         $dog6 = new Dog();
         $dog6->setId(5);
         $dog6->setName('Joachim ');
-        $dog6->setGoodBoy(5);
+        $dog6->setGoodBoy(3);
         $dog6->setColor('orange');
         $dog6->setPrice(999);
 
@@ -61,14 +61,14 @@ Class DogRepository
         $dog8 = new Dog();
         $dog8->setId(7);
         $dog8->setName('Karl ');
-        $dog8->setGoodBoy(5);
+        $dog8->setGoodBoy(2);
         $dog8->setColor('blue');
         $dog8->setPrice(666);
 
         $dog9 = new Dog();
         $dog9->setId(8);
         $dog9->setName('Erich ');
-        $dog9->setGoodBoy(5);
+        $dog9->setGoodBoy(1);
         $dog9->setColor('blond chatain pale');
         $dog9->setPrice(700);
 
@@ -91,6 +91,14 @@ Class DogRepository
 
     public function findOneById(int $id): Dog
     {
-        return $this->dogs[$id];
+        foreach ($this->dogs as $dog) {
+            if ($dog->getId() === $id) {
+                return $dog;
+            }
+        }
+        throw new \RuntimeException(sprintf(
+            'No dog found with id "%s"',
+            $id
+        ));
     }
 }

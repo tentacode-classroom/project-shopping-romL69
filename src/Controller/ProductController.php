@@ -10,28 +10,16 @@ use App\Repository\DogRepository;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product/{productId}", name="product")
+     * @Route("/product/{id}", name="product")
      */
-    public function index(Request $request, $productId = 'non defini')
+    public function index(Request $request, $id = 'non defini')
     {
-        /*$productId = $request->get('productId');
-        return $this->render('product/index.html.twig', [
-            'productId' => $productId,
-        ]);
-*/
-        $dogRepository = new DogRepository();
-        $dog = $dogRepository->findOneById($productId);
-        return $this->render('product/index.html.twig', [
-            'productId' => $productId,
-        ]);
-    }
-    /*public function index(Request $request, $id='non defini')
-    {
-        $id = $request->get('id');
+
         $dogRepository = new DogRepository();
         $dog = $dogRepository->findOneById($id);
         return $this->render('product/index.html.twig', [
-            'productId' => $id,
+            'dog' => $dog,
         ]);
-    }*/
+    }
+
 }

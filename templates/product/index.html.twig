@@ -7,12 +7,16 @@
     <body>
         {{ include('layout/menu.html.twig') }}
 
-        <h1>Produit {{ productId +1}}</h1>
-        {% if productId +1 >=3 %}
-        <h1>plus grd que 3</h1>
-        {% else %}
-        <h1>plus ptit que 3</h1>
-        {% endif %}
+        <h1>Produit {{ dog.id +1}}</h1>
+
+
+        {{ dog.name}}
+
+        {{ dog.price }} €
+
+        {{ dog.color }}
+
+        {{ dog.goodboy }} /5
 
     </body>
 </html>
