@@ -80,7 +80,7 @@
                 <a href="{{ path('product', {'productId': dog.id}) }}"><img class="card-img-top" src="http://image.noelshack.com/fichiers/2018/39/3/1537958498-69y0wezi91501.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="{{ path('product', {'id': dog.id}) }}">Good boy N° {{ dog.id +1}}</a>
+                    <a href="{{ path('product', {'id': dog.id}) }}">Good boy N° {{ dog.id }}</a>
                   </h4>
                   <h5>${{ dog.price }}</h5>
                   <p class="card-text">{{ dog.name|upper }} {{ dog.color }}</p>

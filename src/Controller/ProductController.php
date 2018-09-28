@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\DogRepository;
+use App\Entity\Dog;
 
 class ProductController extends AbstractController
 {
@@ -15,8 +16,10 @@ class ProductController extends AbstractController
     public function index(Request $request, $id = 'non defini')
     {
 
-        $dogRepository = new DogRepository();
-        $dog = $dogRepository->findOneById($id);
+        $dog= $this->getDoctrine()
+        ->getRepository(Dog::class)
+        ->find($id);
+    
         return $this->render('product/index.html.twig', [
             'dog' => $dog,
         ]);
