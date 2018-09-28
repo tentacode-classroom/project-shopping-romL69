@@ -1,53 +1,108 @@
 <?php
+
 namespace App\Entity;
 
-Class Dog
-{
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\DogRepository")
+ */
+class Dog
+{
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $name;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $goodboy;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $color;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $price;
 
-    public function setId(string $id)
-    {
-        $this->id= $id;
-    }
-    public function getId (): int 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $breed;
+
+    public function getId(): ?int
     {
         return $this->id;
     }
-    public function setName(string $name)
-    {
-        $this->name= $name;
-    }
-    public function getName ()
+
+    public function getName(): ?string
     {
         return $this->name;
     }
-    public function setGoodBoy(int $goodboy)
+
+    public function setName(string $name): self
     {
-        $this->goodboy= $goodboy;
+        $this->name = $name;
+
+        return $this;
     }
-    public function getGoodBoy ()
+
+    public function getGoodboy(): ?int
     {
         return $this->goodboy;
     }
-    public function setColor(string $color)
+
+    public function setGoodboy(int $goodboy): self
     {
-        $this->color= $color;
+        $this->goodboy = $goodboy;
+
+        return $this;
     }
-    public function getColor ()
+
+    public function getColor(): ?string
     {
         return $this->color;
     }
-    public function setPrice(string $price)
+
+    public function setColor(string $color): self
     {
-        $this->price= $price;
+        $this->color = $color;
+
+        return $this;
     }
-    public function getPrice ()
+
+    public function getPrice(): ?int
     {
         return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getBreed(): ?string
+    {
+        return $this->breed;
+    }
+
+    public function setBreed(string $breed): self
+    {
+        $this->breed = $breed;
+
+        return $this;
     }
 }

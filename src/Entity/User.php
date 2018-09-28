@@ -1,45 +1,103 @@
 <?php
 
-Class User
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ */
+class User
 {
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $email;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $password;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $lastname;
 
-    public function setEmail(string $email)
+    public function getId(): ?int
     {
-        $this->email= $email;
+        return $this->id;
     }
-    public function getEmail ($email)
+
+    public function getEmail(): ?string
     {
         return $this->email;
     }
-    public function setPassword(string $password)
+
+    public function setEmail(string $email): self
     {
-        $this->password= $password;
+        $this->email = $email;
+
+        return $this;
     }
-    public function getPassword ($password)
+
+    public function getYes(): ?string
+    {
+        return $this->yes;
+    }
+
+    public function setYes(string $yes): self
+    {
+        $this->yes = $yes;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
     {
         return $this->password;
     }
-    public function setFirstname(string $firstname)
+
+    public function setPassword(string $password): self
     {
-        $this->firstname= $firstname;
+        $this->password = $password;
+
+        return $this;
     }
-    public function getFirstname ($firstname)
+
+    public function getFirstname(): ?string
     {
         return $this->firstname;
     }
-    public function setLastname(string $lastname)
+
+    public function setFirstname(string $firstname): self
     {
-        $this->lastname= $lastname;
+        $this->firstname = $firstname;
+
+        return $this;
     }
-    public function getlastname ($lastname)
+
+    public function getLastname(): ?string
     {
         return $this->lastname;
     }
 
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
 
+        return $this;
+    }
 }
