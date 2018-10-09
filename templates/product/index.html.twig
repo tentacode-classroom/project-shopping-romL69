@@ -48,9 +48,9 @@
           <div class="card mt-4">
             <img class="card-img-top img-fluid" src="http://image.noelshack.com/fichiers/2018/39/3/1537958498-69y0wezi91501.jpg" alt="">
             <div class="card-body">
-              <h3 class="card-title">{{ dog.name}}</h3>
+              <h3 class="card-title">{{ dog.name}} - {{ dog.viewCounter }} vues</h3>
               <h4>{{ dog.price }} €</h4>
-              <p class="card-text">{{ dog.color }}</p>
+              <p class="card-text">{{ dog.color }} {{ dog.getBreed().getName() }}</p>
               {% for i in 0..dog.goodboy-1 %}
               <small class="text-warning"> &#9733;</small>
               {% endfor %}
@@ -68,7 +68,7 @@
               Product Reviews
             </div>
             <div class="card-body">
-            <p>IS VERY GOOD BOII OMG</p>              
+            <p>IS VERY GOOD BOII OMG</p>
               <small class="text-muted">Posted by Anonymous on 3/1/17</small>
               <hr>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>

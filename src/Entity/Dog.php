@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,9 +39,24 @@ class Dog
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
+     */
+    private $viewCounter;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Breed", inversedBy="dog_id")
      */
     private $breed;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="dogs")
+     */
+    private $tags;
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -94,14 +111,56 @@ class Dog
         return $this;
     }
 
-    public function getBreed(): ?string
+    public function getViewCounter(): ?int
+    {
+        return $this->viewCounter;
+    }
+
+    public function setViewCounter(int $viewCounter): self
+    {
+        $this->viewCounter = $viewCounter;
+
+        return $this;
+    }
+    public function increaseViewCounter()
+    {
+                $this->viewCounter++;
+    }
+
+    public function getBreed(): ?Breed
     {
         return $this->breed;
     }
 
-    public function setBreed(string $breed): self
+    public function setBreed(?Breed $breed): self
     {
         $this->breed = $breed;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->contains($tag)) {
+            $this->tags->removeElement($tag);
+        }
 
         return $this;
     }

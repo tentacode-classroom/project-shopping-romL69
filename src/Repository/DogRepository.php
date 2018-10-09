@@ -22,19 +22,29 @@ class DogRepository extends ServiceEntityRepository
 //    /**
 //     * @return Dog[] Returns an array of Dog objects
 //     */
-    /*
-    public function findByExampleField($value)
+
+    public function findByPrice()
     {
         return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
+            //->andWhere('d.price > :price ')
+            //->setParameter('price', 50)
+            ->orderBy('d.price', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    public function findByAlpha()
+    {
+        return $this->createQueryBuilder('d')
+            //->andWhere('d.price > :price ')
+            //->setParameter('price', 50)
+            ->orderBy('d.name', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Dog

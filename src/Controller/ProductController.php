@@ -19,7 +19,10 @@ class ProductController extends AbstractController
         $dog= $this->getDoctrine()
         ->getRepository(Dog::class)
         ->find($id);
-    
+        $dog->increaseViewCounter();
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($dog);
+        $entityManager->flush();
         return $this->render('product/index.html.twig', [
             'dog' => $dog,
         ]);

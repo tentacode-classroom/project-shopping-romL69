@@ -17,7 +17,7 @@ class HomepageController extends AbstractController
 
         $dogs= $this->getDoctrine()
         ->getRepository(Dog::class)
-        ->findAll();
+        ->findByAlpha();
 
         return $this->render('homepage/index.html.twig', [
             'dogs' => $dogs,
