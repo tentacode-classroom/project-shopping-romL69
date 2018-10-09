@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5ec6d2b-9945-46cd-b6d6-31a61ca80077" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Migrations/Version20180927144933.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e1aa6497-36c5-47cf-8143-882bf26fe9c0.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e1aa6497-36c5-47cf-8143-882bf26fe9c0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/app.js" afterPath="$PROJECT_DIR$/assets/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/HomepageController.php" afterPath="$PROJECT_DIR$/src/Controller/HomepageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataFixtures/AddDog.php" afterPath="$PROJECT_DIR$/src/DataFixtures/AddDog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Dog.php" afterPath="$PROJECT_DIR$/src/Entity/Dog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/DogRepository.php" afterPath="$PROJECT_DIR$/src/Repository/DogRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/homepage/index.html.twig" afterPath="$PROJECT_DIR$/templates/homepage/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product/index.html.twig" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/RegisterController.php" afterPath="$PROJECT_DIR$/src/Controller/RegisterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -132,12 +124,12 @@
       <option name="presentableId" value="Default" />
       <updated>1538060051121</updated>
       <workItem from="1538060056876" duration="3390000" />
-      <workItem from="1539000389131" duration="8750000" />
+      <workItem from="1539000389131" duration="11416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12140000" />
+    <option name="totallyTimeSpent" value="14806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

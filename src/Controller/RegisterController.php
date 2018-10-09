@@ -16,6 +16,7 @@ class RegisterController extends AbstractController
     /**
      * @Route("/register", name="register")
      */
+
     public function new(Request $request)
     {
 
@@ -37,13 +38,20 @@ class RegisterController extends AbstractController
      // ... perform some action, such as saving the task to the database
      // for example, if Task is a Doctrine entity, save it!
      $entityManager = $this->getDoctrine()->getManager();
-     $entityManager->persist($form);
+     $entityManager->persist($user);
      $entityManager->flush();
 
-     return $this->redirectToRoute('task_success');
+     return $this->redirectToRoute('confirmation');
  }
         return $this->render('register/index.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+    /**
+     * @Route("inscription/confirmation", name="confirmation")
+     */
+    public function Validation()
+    {
+        return $this->render('register/confirmation.html.twig');
     }
 }
