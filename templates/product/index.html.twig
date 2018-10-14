@@ -1,17 +1,9 @@
+ {% extends 'base.html.twig' %}
 
 
-<!DOCTYPE html>
-<html lang="en">
+ {% block title %}Shop Item - Start Bootstrap Template{% endblock %}
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Shop Item - Start Bootstrap Template</title>
-
+     {% block stylesheets %}
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -19,10 +11,10 @@
     <link href="css/shop-item.css" rel="stylesheet">
     <link href="{{ asset('css/shop-homepage.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+     {% endblock %}
 
-  </head>
+  {% block body %}
 
-  <body>
 
     <!-- Navigation -->
     {{ include('layout/menu.html.twig') }}
@@ -34,23 +26,21 @@
       <div class="row">
 
         <div class="col-lg-3">
-          <h1 class="my-4">Shop Name</h1>
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
-          </div>
+          <h1 class="my-4">Good boii.com</h1>
         </div>
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
 
           <div class="card mt-4">
-            <img class="card-img-top img-fluid" src="http://image.noelshack.com/fichiers/2018/39/3/1537958498-69y0wezi91501.jpg" alt="">
+            <img class="card-img-top img-fluid" src="{{ dog.image}}" alt="">
             <div class="card-body">
               <h3 class="card-title">{{ dog.name}} - {{ dog.viewCounter }} vues</h3>
               <h4>{{ dog.price }} €</h4>
               <p class="card-text">{{ dog.color }} {{ dog.getBreed().getName() }}</p>
+             <p class="card-text"> {% for tag in dog.tags %}
+                 {{ tag.name }}
+              {% endfor %} </p>
               {% for i in 0..dog.goodboy-1 %}
               <small class="text-warning"> &#9733;</small>
               {% endfor %}
@@ -65,19 +55,11 @@
 
           <div class="card card-outline-secondary my-4">
             <div class="card-header">
-              Product Reviews
+              Description
             </div>
             <div class="card-body">
-            <p>IS VERY GOOD BOII OMG</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
-              <a href="#" class="btn btn-success">Leave a Review</a>
+            <p>{{ dog.description }}</p>
+
             </div>
           </div>
           <!-- /.card -->
@@ -93,7 +75,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Romain 2018</p>
       </div>
       <!-- /.container -->
     </footer>
@@ -102,6 +84,5 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </body>
 
-</html>
+{% endblock %}

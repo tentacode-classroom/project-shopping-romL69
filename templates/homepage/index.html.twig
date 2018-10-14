@@ -1,25 +1,17 @@
+{% extends 'base.html.twig' %}
 
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
+{% block title %}Goodboy.com{% endblock %}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Goodboy.com</title>
-
+{% block stylesheets %}
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/shop-homepage.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
-  </head>
-
-  <body>
+{% endblock %}
+  {% block body %}
 
     <script src="{{ asset('build/app.js') }}"></script>
     <!-- Navigation -->
@@ -34,11 +26,7 @@
         <div class="col-lg-3">
 
           <h1 class="my-4">Good boii.com</h1>
-          <div class="list-group">
-            <a href="#" class="list-group-item">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
-          </div>
+
 
         </div>
         <!-- /.col-lg-3 -->
@@ -76,7 +64,7 @@
               {% for dog in dogs %}
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="{{ path('product', {'productId': dog.id}) }}"><img class="card-img-top" src="http://image.noelshack.com/fichiers/2018/39/3/1537958498-69y0wezi91501.jpg" alt=""></a>
+                <a href="{{ path('product', {'id': dog.id}) }}"><img class="card-img-top" src="{{ dog.image }}" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="{{ path('product', {'id': dog.id}) }}">Good boy N° {{ dog.id }}</a>
@@ -113,7 +101,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Romain 2018</p>
       </div>
       <!-- /.container -->
     </footer>
@@ -121,7 +109,4 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-</html>
+{% endblock %}

@@ -34,6 +34,8 @@ class AddDog extends Fixture
         $dog1->setPrice(559);
         $dog1->setBreed($breed);
         $dog1->setViewCounter(0);
+        $dog1->setImage('/img/img1.jpg');
+        $dog1->setDescription('Malgré son passé trouble, ce chien saura apporter joie et réconfort dans votre famille. Adore les voyages en voiture.');
         $dog1->addTag($tag1);
         $dog1->addTag($tag2);
         $manager->persist($dog1);
@@ -48,6 +50,8 @@ class AddDog extends Fixture
         $dog2->setPrice(999);
         $dog2->setBreed($breed2);
         $dog2->setViewCounter(0);
+        $dog2->setImage('/img/img2.jpg');
+        $dog2->setDescription('Ce chien est vraiment un adorable good boy.');
         $dog2->addTag($tag5);
         $dog2->addTag($tag4);
         $manager->persist($dog2);
@@ -60,6 +64,8 @@ class AddDog extends Fixture
         $dog3->setColor('roux');
         $dog3->setPrice(1555);
         $dog3->setBreed($breed3);
+        $dog3->setImage('/img/img3.jpg');
+        $dog3->setDescription('Ce chien est un leader né, il saura mener vos enfants à la baguette.');
         $dog3->setViewCounter(0);
         $dog3->addTag($tag5);
         $dog3->addTag($tag3);
@@ -74,6 +80,8 @@ class AddDog extends Fixture
         $dog4->setColor('noir');
         $dog4->setPrice(556);
         $dog4->setBreed($breed4);
+        $dog4->setImage('/img/img4.jpg');
+        $dog4->setDescription('Ce chien est incroyablement imaginatif.');
         $dog4->setViewCounter(0);
         $dog4->addTag($tag4);
         $dog4->addTag($tag1);
@@ -87,6 +95,8 @@ class AddDog extends Fixture
         $dog5->setColor('noir');
         $dog5->setPrice(350);
         $dog5->setBreed($breed5);
+        $dog5->setImage('/img/img5.jpg');
+        $dog5->setDescription('Ce chien n\'est pas fait pour rester enfermé dans un appartement.');
         $dog5->setViewCounter(0);
         $dog5->addTag($tag3);
         $dog5->addTag($tag2);
@@ -100,6 +110,8 @@ class AddDog extends Fixture
         $dog6->setColor('orange');
         $dog6->setPrice(999);
         $dog6->setBreed($breed6);
+        $dog6->setImage('/img/img6.jpg');
+        $dog6->setDescription('Ce chien sait rester sage même quand ses maîtres ne sont pas là.');
         $dog6->setViewCounter(0);
         $dog6->addTag($tag1);
         $dog6->addTag($tag3);
@@ -113,6 +125,8 @@ class AddDog extends Fixture
         $dog7->setColor('jaune');
         $dog7->setPrice(655);
         $dog7->setBreed($breed7);
+        $dog7->setImage('/img/img7.jpg');
+        $dog7->setDescription('Ce chien mange comme 4.');
         $dog7->setViewCounter(0);
         $dog7->addTag($tag4);
         $dog7->addTag($tag2);
@@ -126,6 +140,8 @@ class AddDog extends Fixture
         $dog8->setColor('blue');
         $dog8->setPrice(666);
         $dog8->setBreed($breed8);
+        $dog8->setImage('/img/img8.jpg');
+        $dog8->setDescription('Ce chien adore nager.');
         $dog8->setViewCounter(0);
         $dog8->addTag($tag2);
         $dog8->addTag($tag3);
@@ -139,6 +155,8 @@ class AddDog extends Fixture
         $dog9->setColor('blond chatain pale');
         $dog9->setPrice(700);
         $dog9->setBreed($breed9);
+        $dog9->setImage('/img/img9.jpg');
+        $dog1->setDescription('Ce chien adore l\'eau mais a tendance à en balancer de partout.');
         $dog9->setViewCounter(0);
         $dog9->addTag($tag5);
         $dog9->addTag($tag4);

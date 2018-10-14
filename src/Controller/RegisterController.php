@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegisterController extends AbstractController
 {
@@ -17,7 +18,7 @@ class RegisterController extends AbstractController
      * @Route("/register", name="register")
      */
 
-    public function new(Request $request)
+    public function new(Request $request, UserPasswordEncoderInterface $encoder)
     {
 
         $user = new User();
@@ -34,7 +35,9 @@ class RegisterController extends AbstractController
           if ($form->isSubmitted() && $form->isValid()) {
 
      $user = $form->getData();
-
+     $plainPassword = $user->getPassword();
+     $encryptedPassword = $encoder->encodePassword($user, $plainPassword);
+     $user->setPassword($encryptedPassword);
      // ... perform some action, such as saving the task to the database
      // for example, if Task is a Doctrine entity, save it!
      $entityManager = $this->getDoctrine()->getManager();

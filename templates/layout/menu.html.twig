@@ -6,20 +6,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
+        {% if is_granted('ROLE_ADMIN') %}
+       <li  class="nav-item active">
+           <a class="nav-link" href="{{ path('admin') }}">Administration</a>
+       </li>
+       {% endif %}
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+       <li  class="nav-item active">
+           <a class="nav-link" href="{{ path('logout') }}">Logout  ({{ app.user.email}})</a>
+       </li>
+       {% else %}
+       <li  class="nav-item active">
+           <a class="nav-link" href="{{ path('login') }}">Login</a>
+       </li>
+       {% endif %}
       </ul>
     </div>
   </div>

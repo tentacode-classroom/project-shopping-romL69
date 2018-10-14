@@ -77,4 +77,8 @@ class Tag
 
         return $this;
     }
+    public function toString() : string
+    {
+        return $this->name;
+    }
 }
